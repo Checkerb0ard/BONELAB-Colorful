@@ -1,25 +1,20 @@
-﻿using MelonLoader;
-using System.Reflection;
-using System.Resources;
-using System.Runtime.InteropServices;
+﻿using System.Reflection;
+using MelonLoader;
 
-[assembly: AssemblyTitle(Melon_Loader_Mod5.BuildInfo.Name)]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(Melon_Loader_Mod5.BuildInfo.Company)]
-[assembly: AssemblyProduct(Melon_Loader_Mod5.BuildInfo.Name)]
-[assembly: AssemblyCopyright("Created by " + Melon_Loader_Mod5.BuildInfo.Author)]
-[assembly: AssemblyTrademark(Melon_Loader_Mod5.BuildInfo.Company)]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-//[assembly: Guid("")]
-[assembly: AssemblyVersion(Melon_Loader_Mod5.BuildInfo.Version)]
-[assembly: AssemblyFileVersion(Melon_Loader_Mod5.BuildInfo.Version)]
-[assembly: NeutralResourcesLanguage("en")]
-[assembly: MelonInfo(typeof(Melon_Loader_Mod5.Main), Melon_Loader_Mod5.BuildInfo.Name, Melon_Loader_Mod5.BuildInfo.Version, Melon_Loader_Mod5.BuildInfo.Author, Melon_Loader_Mod5.BuildInfo.DownloadLink)]
+[assembly: AssemblyTitle(BreadSoup.Colorful.Main.Description)]
+[assembly: AssemblyDescription(BreadSoup.Colorful.Main.Description)]
+[assembly: AssemblyCompany(BreadSoup.Colorful.Main.Company)]
+[assembly: AssemblyProduct(BreadSoup.Colorful.Main.Name)]
+[assembly: AssemblyCopyright("Developed by " + BreadSoup.Colorful.Main.Author)]
+[assembly: AssemblyTrademark(BreadSoup.Colorful.Main.Company)]
+[assembly: AssemblyVersion(BreadSoup.Colorful.Main.Version)]
+[assembly: AssemblyFileVersion(BreadSoup.Colorful.Main.Version)]
+[assembly:
+    MelonInfo(typeof(BreadSoup.Colorful.Main), BreadSoup.Colorful.Main.Name, BreadSoup.Colorful.Main.Version,
+        BreadSoup.Colorful.Main.Author, BreadSoup.Colorful.Main.DownloadLink)]
+[assembly: MelonColor(255, 255, 255, 255)]
 
-
-// Create and Setup a MelonModGame to mark a Mod as Universal or Compatible with specific Games.
-// If no MelonModGameAttribute is found or any of the Values for any MelonModGame on the Mod is null or empty it will be assumed the Mod is Universal.
-// Values for MelonModGame can be found in the Game's app.info file or printed at the top of every log directly beneath the Unity version.
+// Create and Setup a MelonGame Attribute to mark a Melon as Universal or Compatible with specific Games.
+// If no MelonGame Attribute is found or any of the Values for any MelonGame Attribute on the Melon is null or empty it will be assumed the Melon is Universal.
+// Values for MelonGame Attribute can be found in the Game's app.info file or printed at the top of every log directly beneath the Unity version.
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
