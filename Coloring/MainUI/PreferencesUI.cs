@@ -1,4 +1,5 @@
-﻿using BreadSoup.Colorful.Melon;
+﻿using BoneLib;
+using BreadSoup.Colorful.Melon;
 using HarmonyLib;
 using Il2CppSLZ.Bonelab;
 using UnityEngine;
@@ -20,8 +21,13 @@ public static class Control_UI_InGameDataUtils
     {
         // Terrible way to do this
         
-        var tmpTexts = control_UI_InGameData.GetComponentsInChildren<Il2CppTMPro.TextMeshProUGUI>(true);
+        var tmpTexts = control_UI_InGameData.GetComponentsInChildren<Il2CppTMPro.TMP_Text>(true);
         foreach (var tmp in tmpTexts)
+        {
+            tmp.color = color;
+        }
+        var genericTmp = control_UI_InGameData.GetComponentsInChildren<Il2CppTMPro.TextMeshPro>(true);
+        foreach (var tmp in genericTmp)
         {
             tmp.color = color;
         }

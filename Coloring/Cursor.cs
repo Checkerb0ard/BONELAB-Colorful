@@ -57,12 +57,3 @@ public class CursorUtils
         }
     }
 }
-
-[HarmonyPatch(typeof(LaserCursor), "Awake")]
-public class LaserCursorAwakePatch
-{
-    public static void Postfix(LaserCursor __instance)
-    {
-        CursorUtils.ApplySLZCursorColors(Preferences.Cursor.Value);
-    }
-}

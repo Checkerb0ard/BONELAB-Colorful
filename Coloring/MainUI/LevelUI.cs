@@ -20,8 +20,6 @@ public static class LevelsPanelViewUtils
 {
     public static void ApplyLevelsPanelViewColors(LevelsPanelView levelsPanelView, Color color)
     {
-        // something in VoidG114 uses the same LevelsPanelView script, so just add a bunch of null checks
-        
         if (levelsPanelView == null) return;
 
         if (levelsPanelView.pageText != null)

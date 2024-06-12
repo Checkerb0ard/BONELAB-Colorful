@@ -18,7 +18,9 @@ internal static class BoneMenu
 
     public static SubPanelElement ColorPicker;
 
-    public static MenuCategory MainUI;
+    public static SubPanelElement MainUI;
+    
+    public static SubPanelElement PopUpUI;
 
     public static Color MixedSelectedColor = Color.white;
 
@@ -29,13 +31,21 @@ internal static class BoneMenu
     // Elements for all the options
     
     private static MenuElement SpawnGunUI;
-    private static MenuElement PopUpUI;
     private static MenuElement ItemSlotsPanelView;
     private static MenuElement PreferencesUI;
     private static MenuElement AvatarMenuUI;
     private static MenuElement BodyMallUI;
     private static MenuElement LevelUI;
     private static MenuElement Cursor;
+    
+    private static MenuElement PopUpUI_N;
+    private static MenuElement PopUpUI_NE;
+    private static MenuElement PopUpUI_E;
+    private static MenuElement PopUpUI_SE;
+    private static MenuElement PopUpUI_S;
+    private static MenuElement PopUpUI_SW;
+    private static MenuElement PopUpUI_W;
+    private static MenuElement PopUpUI_NW;
     
     public static void Setup()
     {
@@ -64,7 +74,81 @@ internal static class BoneMenu
             colorPreview.SetColor(MixedSelectedColor);
         });
         
-        MainUI = MainCategory.CreateCategory("Main UI", Color.cyan);
+        MainUI = MainCategory.CreateSubPanel("Main UI", Color.cyan);
+        
+        PopUpUI = MainCategory.CreateSubPanel("Pop Up UI", Color.green);
+        
+        PopUpUI_N = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (North)", Preferences.PopUpUI_N.Value, () =>
+        {
+            Preferences.PopUpUI_N.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_N.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
+        
+        PopUpUI_NE = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (North East)", Preferences.PopUpUI_NE.Value, () =>
+        {
+            Preferences.PopUpUI_NE.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_NE.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
+        
+        PopUpUI_E = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (East)", Preferences.PopUpUI_E.Value, () =>
+        {
+            Preferences.PopUpUI_E.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_E.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
+        
+        PopUpUI_SE = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (South East)", Preferences.PopUpUI_SE.Value, () =>
+        {
+            Preferences.PopUpUI_SE.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_SE.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
+        
+        PopUpUI_S = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (South)", Preferences.PopUpUI_S.Value, () =>
+        {
+            Preferences.PopUpUI_S.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_S.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
+        
+        PopUpUI_SW = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (South West)", Preferences.PopUpUI_SW.Value, () =>
+        {
+            Preferences.PopUpUI_SW.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_SW.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
+        
+        PopUpUI_W = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (West)", Preferences.PopUpUI_W.Value, () =>
+        {
+            Preferences.PopUpUI_W.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_W.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
+        
+        PopUpUI_NW = PopUpUI.CreateFunctionElement("Apply to Pop Up UI (North West)", Preferences.PopUpUI_NW.Value, () =>
+        {
+            Preferences.PopUpUI_NW.Value = MixedSelectedColor;
+            Preferences.ModCategory.SaveToFile(true);
+            PopUpUI_NW.SetColor(MixedSelectedColor);
+            
+            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView);
+        });
         
         PreferencesUI = MainUI.CreateFunctionElement("Apply to Preferences UI", Preferences.PreferencesUI.Value, () =>
         {
@@ -114,15 +198,6 @@ internal static class BoneMenu
             Preferences.SpawnGunUI.Value = MixedSelectedColor;
             Preferences.ModCategory.SaveToFile(true);
             SpawnGunUI.SetColor(MixedSelectedColor);
-        });
-        
-        PopUpUI = MainCategory.CreateFunctionElement("Apply to Pop Up UI", Preferences.PopUpUI.Value, () =>
-        {
-            PopUpUIUtils.ApplyPopUpUIColors(Player.uiRig.popUpMenu.radialPageView, MixedSelectedColor);
-
-            Preferences.PopUpUI.Value = MixedSelectedColor;
-            Preferences.ModCategory.SaveToFile(true);
-            PopUpUI.SetColor(MixedSelectedColor);
         });
         
         ItemSlotsPanelView = MainCategory.CreateFunctionElement("Apply to Inventory Slots", Preferences.ItemSlotsPanelView.Value, () =>
